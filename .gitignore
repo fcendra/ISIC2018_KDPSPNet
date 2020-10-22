@@ -71,4 +71,4 @@ dataset/
 *.ninja_log
 *.ninja
 slurm*
-initmodel
+initmodel/
