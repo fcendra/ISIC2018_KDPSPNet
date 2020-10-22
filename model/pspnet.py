@@ -123,7 +123,7 @@ class PSPNet(nn.Module):
 
 def teacher_loader():
     teacher_net = PSPNet(tag='teacher', layers=50, bins=(1, 2, 3, 6), dropout=0.0, classes=2, zoom_factor=8, use_ppm=True, criterion=nn.CrossEntropyLoss(ignore_index=255), pretrained=True)
-    model_path = './initmodel/ResNet50_train_epoch_200.pth'
+    model_path = './initmodel/resnet50_v2.pth'
     checkpoint = torch.load(model_path)
     state_dictionary = checkpoint['state_dict']
     from collections import OrderedDict
