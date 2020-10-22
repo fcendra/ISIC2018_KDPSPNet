@@ -7,7 +7,7 @@
 
 export PYTHONPATH=./
 eval "$(conda shell.bash hook)"
-conda activate pt140  # pytorch 1.4.0 env
+conda activate semseg  # pytorch 1.4.0 env
 PYTHON=python
 
 dataset=$1
@@ -15,7 +15,7 @@ exp_name=$2
 exp_dir=exp/${dataset}/${exp_name}
 model_dir=${exp_dir}/model
 result_dir=${exp_dir}/result
-config=config/cityscapes/cityscapes_pspnet50.yaml
+config=config/isic2018/isic2018_pspnet50.yaml
 now=$(date +"%Y%m%d_%H%M%S")
 
 mkdir -p ${model_dir} ${result_dir}
