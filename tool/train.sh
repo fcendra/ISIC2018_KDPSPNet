@@ -7,7 +7,7 @@
 
 export PYTHONPATH=./
 eval "$(conda shell.bash hook)"
-conda activate semseg  # pytorch 1.4.0 env
+conda activate imgseg  # pytorch 1.4.0 env
 PYTHON=python
 
 dataset=$1
