@@ -5,7 +5,8 @@ import numpy as np
 import cv2
 
 # Dataset path
-annotation_images_path = Path('dataset/isic2018/ISIC2018_Task1-2_Training_Input/').abspath()
+# annotation_images_path = Path('dataset/isic2018/ISIC2018_Task1_Training_GroundTruth/').abspath()
+annotation_images_path = Path("D:\Machine Learning Projects\ISIC2018_KDNet\dataset\isic2018\ISIC2018_Task1_Training_GroundTruth").abspath()
 dataset = [ f for f in listdir(annotation_images_path) if isfile(join(annotation_images_path,f))]
 images = np.empty(len(dataset), dtype = object)
 count = 1
@@ -20,5 +21,5 @@ for n in range(0, 10235):
     number_of_channel = len(images[n].shape)
     # Convert it to array
     array = np.asarray(images[n],dtype="uint8")
-    print(array)
-    print(number_of_channel)
+    print(array[n])
+    # print(number_of_channel)

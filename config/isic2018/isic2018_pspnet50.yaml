@@ -8,20 +8,20 @@ TRAIN:
   arch: psp
   layers: 50
   sync_bn: True  # adopt syncbn or not
-  train_h: 225
-  train_w: 225
+  train_h: 321
+  train_w: 321
   scale_min: 0.25  # minimum random scale
   scale_max: 1.0  # maximum random scale
   rotate_min: -10  # minimum random rotate
   rotate_max: 10  # maximum random rotate
   zoom_factor: 8  # zoom factor for final prediction during training, be in [1, 2, 4, 8]
-  ignore_label: 255
+  ignore_label: 0 #255
   aux_weight: 0.4
   train_gpu: [0]
   workers: 16  # data loader workers
   batch_size: 16  # batch size for training
   batch_size_val: 8  # batch size for validation during training, memory and speed tradeoff
-  base_lr: 0.01
+  base_lr: 0.0001 #0.01
   epochs: 200
   start_epoch: 0
   power: 0.9
