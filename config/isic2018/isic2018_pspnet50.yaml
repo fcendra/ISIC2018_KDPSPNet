@@ -15,7 +15,7 @@ TRAIN:
   rotate_min: -10  # minimum random rotate
   rotate_max: 10  # maximum random rotate
   zoom_factor: 8  # zoom factor for final prediction during training, be in [1, 2, 4, 8]
-  ignore_label: 0 #255
+  ignore_label: 1 #255
   aux_weight: 0.4
   train_gpu: [0]
   workers: 16  # data loader workers
