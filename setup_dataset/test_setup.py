@@ -8,4 +8,4 @@ f = open('fine_test.txt', 'a')
 for n in range(0, len(list)):
     f.write('\n' + test_target_path + list[n])
     print(str(n) + '.jpg is already append')
-f.close
+f.close()
