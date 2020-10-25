@@ -27,7 +27,7 @@ class PPM(nn.Module):
 
 
 class PSPNet(nn.Module):
-    def __init__(self, tag='teacher', layers=50, bins=(1, 2, 3, 6), dropout=0.1, classes=2, zoom_factor=8, use_ppm=True, criterion=nn.CrossEntropyLoss(ignore_index=250), pretrained=True):
+    def __init__(self, tag='teacher', layers=50, bins=(1, 2, 3, 6), dropout=0.1, classes=2, zoom_factor=8, use_ppm=True, criterion=nn.CrossEntropyLoss(ignore_index=255), pretrained=True):
         super(PSPNet, self).__init__()
         assert layers in [18, 50, 101, 152]
         assert 2048 % len(bins) == 0
@@ -122,7 +122,7 @@ class PSPNet(nn.Module):
             return x
 
 def teacher_loader():
-    teacher_net = PSPNet(tag='teacher', layers=50, bins=(1, 2, 3, 6), dropout=0.0, classes=2, zoom_factor=8, use_ppm=True, criterion=nn.CrossEntropyLoss(ignore_index=250), pretrained=True)
+    teacher_net = PSPNet(tag='teacher', layers=50, bins=(1, 2, 3, 6), dropout=0.0, classes=2, zoom_factor=8, use_ppm=True, criterion=nn.CrossEntropyLoss(ignore_index=255), pretrained=True)
     # model_path = './initmodel/resnet50_v2.pth'
     # checkpoint = torch.load(model_path)
     # state_dictionary = checkpoint['state_dict']
