@@ -1,0 +1,4 @@
+First experiment: student pspnet18 (7x7 conv) teacher pspnet50 with pretrained model
+[2020-10-27 22:53:20,014 INFO test.py line 255 27115] Eval result: mIoU/mAcc/allAcc 0.5500/0.7807/0.7117.
+[2020-10-27 22:53:20,014 INFO test.py line 257 27115] Class_0 result: iou/accuracy 0.5828/0.5909, name: void.
+[2020-10-27 22:53:20,014 INFO test.py line 257 27115] Class_1 result: iou/accuracy 0.5172/0.9705, name: melanoma.

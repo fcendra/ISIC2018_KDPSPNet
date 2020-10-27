@@ -6,7 +6,7 @@ import cv2
 
 # Dataset path
 target_path = Path('ISIC2018_Task1_Training_GroundTruth/')
-annotation_images_path = Path('D:\Machine Learning Projects\ISIC2018_KDNet\dataset\isic2018\ISIC2018_Task1_Training_GroundTruth').abspath()
+annotation_images_path = Path('D:\Machine Learning Projects\ISIC2018_KDNet\dataset\isic2018\ISIC2018_Task1_Training_GroundTruth_modified').abspath()
 dataset = [ f for f in listdir(annotation_images_path) if isfile(join(annotation_images_path,f))]
 images = np.empty(len(dataset), dtype = object)
 count = 1
@@ -15,7 +15,7 @@ count = 1
 for n in range(0, len(dataset)):
     # Read image
     images[n] = cv2.imread(join(annotation_images_path,dataset[n]),-1)
- 
+    # print(len(images[n].shape))
     # Convert it to array
     array = np.asarray(images[n],dtype="uint8")
 
