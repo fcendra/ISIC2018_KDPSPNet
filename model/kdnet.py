@@ -21,7 +21,7 @@ class KDNet(nn.Module):
         criterion = nn.CrossEntropyLoss(ignore_index=255)
         p = F.log_softmax(student/temperature, dim = 1)
         q = F.softmax(teacher/temperature, dim = 1)
-        kl_loss = F.kl_div(p, q, reduction = 'mean') * (temperature**2) *19
+        kl_loss = F.kl_div(p, q, reduction = 'mean') * (temperature**2) *2
         ce_loss = F.cross_entropy(student, truth,ignore_index=255)
         aux_loss = self.criterion(aux, truth)
         main_loss = kl_loss * (1 - alpha) + ce_loss * alpha
