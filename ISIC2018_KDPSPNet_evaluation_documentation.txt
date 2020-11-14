@@ -3,6 +3,11 @@ First experiment: student pspnet18 (7x7 conv) teacher pspnet50 with pretrained m
 [2020-10-27 22:53:20,014 INFO test.py line 257 27115] Class_0 result: iou/accuracy 0.5828/0.5909, name: void.
 [2020-10-27 22:53:20,014 INFO test.py line 257 27115] Class_1 result: iou/accuracy 0.5172/0.9705, name: melanoma.
 
+second experiment:
+[2020-10-28 16:50:32,643 INFO test.py line 255 31401] Eval result: mIoU/mAcc/allAcc 0.5534/0.7832/0.7146.
+[2020-10-28 16:50:32,643 INFO test.py line 257 31401] Class_0 result: iou/accuracy 0.5868/0.5944, name: void.
+[2020-10-28 16:50:32,643 INFO test.py line 257 31401] Class_1 result: iou/accuracy 0.5201/0.9720, name: melanoma.
+
 image = resize, bilinear 500 x 500
 gt = resize , nearest neighbour 500 x 500
 
