@@ -124,13 +124,13 @@ class PSPNet(nn.Module):
 def teacher_loader():
     teacher_net = PSPNet(tag='teacher', layers=50, bins=(1, 2, 3, 6), dropout=0.0, classes=2, zoom_factor=8, use_ppm=True, criterion=nn.CrossEntropyLoss(ignore_index=255), pretrained=True)
     model_path = './initmodel/resnet50_v2.pth'
-    checkpoint = torch.load(model_path)
-    state_dictionary = checkpoint['state_dict']
-    from collections import OrderedDict
-    new_state_dict = OrderedDict()
-    for k, v in state_dictionary.items():
-        name = k[7:] # remove `module.`
-        new_state_dict[name] = v
+    # checkpoint = torch.load(model_path)
+    # state_dictionary = checkpoint['state_dict']
+    # from collections import OrderedDict
+    # new_state_dict = OrderedDict()
+    # for k, v in state_dictionary.items():
+    #     name = k[7:] # remove `module.`
+    #     new_state_dict[name] = v
     del new_state_dict["aux.0.weight"]
     del new_state_dict["aux.1.weight"]
     del new_state_dict["aux.1.bias"]
@@ -139,7 +139,8 @@ def teacher_loader():
     del new_state_dict["aux.1.num_batches_tracked"]
     del new_state_dict["aux.4.weight"]
     del new_state_dict["aux.4.bias"]
-    teacher_net.load_state_dict(new_state_dict, strict = True)
+    # teacher_net.load_state_dict(new_state_dict, strict = True)
+    teacher_net.load_state_dict(torch.load(model_path), strict=False)
     return teacher_net
 
 if __name__ == '__main__':
