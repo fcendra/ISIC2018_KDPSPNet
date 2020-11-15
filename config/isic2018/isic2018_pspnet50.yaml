@@ -8,8 +8,8 @@ TRAIN:
   arch: psp
   layers: 50
   sync_bn: True  # adopt syncbn or not
-  train_h: 497
-  train_w: 497
+  train_h: 305
+  train_w: 305
   scale_min: 0.5  # minimum random scale
   scale_max: 1.5  # maximum random scale
   rotate_min: -10  # minimum random rotate
@@ -34,7 +34,7 @@ TRAIN:
   weight:  # path to initial weight (default: none)
   resume:  # path to latest checkpoint (default: none)
   evaluate: False  # evaluate on validation set, extra gpu memory needed and small batch_size_val is recommend
-  temperature: 4.
+  temperature: 10.  #4.
   alpha: 0.5
 Distributed:
   dist_url: tcp://127.0.0.1:6789
@@ -47,8 +47,8 @@ TEST:
   test_list: dataset/isic2018/list/fine_val.txt
   split: val  # split in [train, val and test]
   base_size: 500  # based size for scaling
-  test_h: 497
-  test_w: 497
+  test_h: 305
+  test_w: 305
   scales: [1.0]  # evaluation scales, ms as [0.5, 0.75, 1.0, 1.25, 1.5, 1.75]
   has_prediction: False  # has prediction already or not
   index_start: 0  # evaluation start index in list
